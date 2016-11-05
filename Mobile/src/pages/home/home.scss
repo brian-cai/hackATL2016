@@ -1,3 +1,11 @@
 page-home {
-    
+    ion-note {
+        .inner {
+            color: darken(color($colors, secondary, base), 15%) !important;
+            font-size: 14px;
+        }
+    }
+    ion-title img {
+        height:27px;
+    }
 }

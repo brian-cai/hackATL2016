@@ -16,15 +16,19 @@ curl -i "https://api.yelp.com/v3/businesses/search?term=XXX&location=XXX&limit=4
 Yelp get ratings <required, restaurantID>
 curl -i "https://api.yelp.com/v3/businesses/{id}/reviews" -H "Authorization: Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx"
 
-curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/restaurant/search?street-address=Atlanta+GA'
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/restaurant/search?street-address=XXX'
 EatStreet find restaurant nearby
+
 
 EatStreet view menu <required,restaurantAPI>
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/restaurant/3e7c9532672b4082f15b4f2e73e761805f2f9e661202a1ab/menu'
 
+
 EatStreet make delivery
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/send-order?restaurantApiKey=RESTAURANTAPI&items=XXX&method=XXX&payment=XXX&test=true&tip=XXX&card=PERSONAPI&address=PERSONAPI&recipient=PERSONAPI'
+make 6 parameters or whatever
 
+#
 EatStreet register-user
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/register-user?email=XXX&password=XXX&firstName=XXX&lastName=XXX&phone=XXX'
 

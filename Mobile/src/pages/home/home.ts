@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { Component, NgModule } from '@angular/core';
+import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
 
@@ -39,7 +39,8 @@ export class HomePage {
     }],
     image: "assets/testimg.jpg",
     caption: "I adore this pineapple!",
-    timestamp: "2016-11-05T04:09:45+00:00"
+    timestamp: "2016-11-05T04:09:45+00:00",
+    sponsored: true
   },
   {
     user: {
@@ -70,6 +71,29 @@ export class HomePage {
     timestamp: "2016-09-05T04:09:45+00:00"
   }]
   placeOrder(item) { 
-    
+    let modal = this.modalCtrl.create(ModalContentPage);
+    modal.present();
+}
+}
+
+@Component({
+  template: `
+test
+`
+})
+export class ModalContentPage {
+  character;
+
+  constructor(
+    public platform: Platform,
+    public params: NavParams,
+    public viewCtrl: ViewController
+  ) {
+  }
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 }
+
+
+

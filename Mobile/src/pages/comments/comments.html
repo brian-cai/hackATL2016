@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Comments page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Comments</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<ion-list>
+		<ion-item *ngFor="let comment of comments">
+			<ion-avatar item-left>
+				<img [src]="comment.user.profileImg" alt="">
+			</ion-avatar>
+			<h2 text-bold>{{comment.user.name}}</h2>
+			<h2>{{comment.content}}</h2>
+			<ion-note item-right>
+				{{ago(comment.timestamp)}}
+			</ion-note>
+		</ion-item>
+	</ion-list>
+</ion-content>

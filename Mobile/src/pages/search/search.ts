@@ -11,5 +11,11 @@ export class SearchPage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  search = "";
+  onInput(event) {
+    console.log(event);
+  }
+  onCancel(event) {
+    console.log(event);
+  }
 }

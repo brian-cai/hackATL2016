@@ -4,8 +4,6 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { account } from './account';
-
 
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`
@@ -19,8 +17,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-
-      let aAccount = new account("tester"); 
     });
   }
 }

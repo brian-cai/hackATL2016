@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { SearchPage } from '../search/search';
@@ -18,7 +19,15 @@ export class TabsPage {
   activityRoot: any = ActivityPage;
   profileRoot: any = ProfilePage;
 
-  constructor() {
+  constructor(
+    public modalCtrl: ModalController
+  ) {
 
+  }
+
+  importModal() {
+    console.log("event fired!");
+    let modal = this.modalCtrl.create(ImportPage);
+    modal.present();
   }
 }

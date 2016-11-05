@@ -39,7 +39,8 @@ export class HomePage {
     }],
     image: "assets/testimg.jpg",
     caption: "I adore this pineapple!",
-    timestamp: "2016-11-05T04:09:45+00:00"
+    timestamp: "2016-11-05T04:09:45+00:00",
+    sponsored: true
   },
   {
     user: {
@@ -69,7 +70,7 @@ export class HomePage {
     caption: "Mmmmmm, chicken wings!",
     timestamp: "2016-09-05T04:09:45+00:00"
   }]
-  placeOrder(item) { 
-    
+  placeOrder(item) {
+
   }
 }

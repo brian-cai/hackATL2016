@@ -1,0 +1,38 @@
+Ordering Food
+
+
+Yelp appID: uPcGULHvBqVfolkOvOe4lA
+yelp appSecret: qapL6D2fpjf5fR658HkiQAi9h6xKlNap5iIRLJX4Gmt4qqIRn9gZpyAEQu3rc8aQ
+
+curl -i https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972 -H {Authorization: Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx}
+
+
+
+API calls
+Yelp search that returns 4 options
+curl -i "https://api.yelp.com/v3/businesses/search?term=XXX&location=XXX&limit=4" -H "Authorization: Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx"
+
+
+Yelp get ratings <required, restaurantID>
+curl -i "https://api.yelp.com/v3/businesses/{id}/reviews" -H "Authorization: Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx"
+
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/restaurant/search?street-address=Atlanta+GA'
+EatStreet find restaurant nearby
+
+EatStreet view menu <required,restaurantAPI>
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/restaurant/3e7c9532672b4082f15b4f2e73e761805f2f9e661202a1ab/menu'
+
+EatStreet make delivery
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/send-order?restaurantApiKey=RESTAURANTAPI&items=XXX&method=XXX&payment=XXX&test=true&tip=XXX&card=PERSONAPI&address=PERSONAPI&recipient=PERSONAPI'
+
+EatStreet register-user
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/register-user?email=XXX&password=XXX&firstName=XXX&lastName=XXX&phone=XXX'
+
+EatStreet add address
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-address?apiKey=PERSONAPI&aptNumber=XXX(opt)&streetAddress=XXX&city=XXX&state=XXX&zip=XXX'
+
+EatStreet add credit card
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-card?apiKey=PERSONAPI&cardholderName=XXX&cardholderStreetAddress=XXX&cardholderZip=XXX&cvv=XXX&cardNumber=XXX&expirationMonth=XXX&expirationYear=XXX'
+
+EatStreet has account login
+curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/signin?email=XXX&password=XXX'

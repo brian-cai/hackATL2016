@@ -1,0 +1,6 @@
+page-comments {
+    [text-bold] {
+        font-weight:700;
+        color: darken(color($colors, primary, base), 20%);
+    }
+}

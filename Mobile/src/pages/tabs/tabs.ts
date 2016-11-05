@@ -15,8 +15,8 @@ export class TabsPage {
   feedRoot: any = HomePage;
   searchRoot: any = SearchPage;
   importRoot: any = ImportPage;
-  activityRoot: any = ProfilePage;
-  profileRoot: any = ActivityPage;
+  activityRoot: any = ActivityPage;
+  profileRoot: any = ProfilePage;
 
   constructor() {
 

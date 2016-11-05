@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
 
@@ -9,7 +9,10 @@ import { CommentsPage } from "../comments/comments"
 })
 export class HomePage {
   commentsPage = CommentsPage;
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController
+  ) {
 
   }
   longDate(date) {
@@ -66,4 +69,7 @@ export class HomePage {
     caption: "Mmmmmm, chicken wings!",
     timestamp: "2016-09-05T04:09:45+00:00"
   }]
+  placeOrder(item) {
+    alert("Hello" + item.content);
+  }
 }

@@ -15,7 +15,7 @@
 			<p>{{longDate(post.timestamp)}}</p>
 		</ion-item>
 
-		<img [src]="post.image">
+		<img (press)="placeOrder(post)" [src]="post.image">
 
 		<ion-card-content>
 			<p>{{post.caption}}</p>

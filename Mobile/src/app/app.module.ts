@@ -5,6 +5,7 @@ import { SearchPage } from '../pages/search/search';
 import { ImportPage } from '../pages/import/import';
 import { HomePage } from '../pages/home/home';
 import { CommentsPage } from '../pages/comments/comments';
+import { LoginPage } from '../pages/login/login';
 
 import { ActivityPage } from '../pages/activity/activity';
 import { ProfilePage } from '../pages/profile/profile';
@@ -12,6 +13,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { Profile } from "../providers/profile"
+import { User } from "../providers/user"
 import { Globals } from "../providers/globals"
 
 @NgModule({
@@ -39,6 +41,6 @@ import { Globals } from "../providers/globals"
     ProfilePage,
     CommentsPage
   ],
-  providers: [Profile, Globals]
+  providers: [Profile, Globals, User]
 })
 export class AppModule { }

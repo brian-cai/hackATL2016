@@ -1,0 +1,72 @@
+<!--
+  Generated template for the Login9 page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="login" >
+
+        <!--top-->
+
+        <div text-center class="top-header" ion-fixed>
+            <ion-grid>
+      <ion-row class="header-menu">
+        <ion-col width-50><button ion-button color="light" clear block (click)="changeState('login')">Login</button></ion-col>
+        <ion-col width-50><button  ion-button color="light" clear block (click)="changeState('signup')">Sign up</button></ion-col>
+          <img src="assets/img/active-icon.png" width="15px" id="active-icon" [ngClass]="{'left': viewState==='login'}">
+      </ion-row>
+            </ion-grid>
+
+          
+        </div>
+
+        <div class="padding " ion-fixed>
+            <div class="padding">
+
+               <!--signup-->
+                <ion-list *ngIf="viewState==='signup'">
+                  <ion-item>
+                      <ion-icon name="md-mail" item-left></ion-icon>
+                    <ion-input type="email" placeholder="E-mail"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="md-person" item-left></ion-icon>
+                    <ion-input type="text" placeholder="Username"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-icon name="md-lock" item-left></ion-icon>
+                      <ion-icon name="md-eye" item-right (click)="hideShowPassword()" class="eye-icon" [ngClass]="{'half-opacity': inputType==='text'}"></ion-icon>
+                    <ion-input type="{{inputType}}" placeholder="Password"></ion-input>
+                  </ion-item>
+
+                </ion-list>
+                
+                <!--login-->
+                <ion-list *ngIf="viewState==='login'">
+                  <ion-item>
+                      <ion-icon name="md-person" item-left></ion-icon>
+                    <ion-input type="text" placeholder="Username"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-icon name="md-lock" item-left></ion-icon>
+                      <ion-icon name="md-eye" item-right (click)="hideShowPassword()" class="eye-icon" [ngClass]="{'half-opacity': inputType==='text'}"></ion-icon>
+                    <ion-input type="{{inputType}}" placeholder="Password"></ion-input>
+                  </ion-item>
+
+                </ion-list>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="footer-content btn-holder" ion-fixed>
+            <div class="animated fadeIn">
+                <button ion-button round block color="positive">Create Account</button>
+                <button ion-button round block color="facebook">Facebook</button>
+            </div>
+        </div>
+
+
+
+    </ion-content>

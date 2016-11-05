@@ -1,0 +1,7 @@
+{
+  "name": "ionic-hello-world",
+  "dependencies": {},
+  "globalDependencies": {
+    "cordova": "registry:dt/cordova#0.0.0+20160607055823"
+  }
+}

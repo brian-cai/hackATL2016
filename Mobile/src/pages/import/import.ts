@@ -10,7 +10,7 @@ import { Camera, Transfer, FileUploadOptions } from 'ionic-native';
 export class ImportPage {
   constructor(
     public navCtrl: NavController,
-    public viewCtrl: ViewController,
+    public viewCtrl: ViewController
   ) {
   }
   post: any = {};

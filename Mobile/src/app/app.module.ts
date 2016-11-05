@@ -4,6 +4,7 @@ import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { ImportPage } from '../pages/import/import';
 import { HomePage } from '../pages/home/home';
+import { ModalPage } from '../pages/modal/modal';
 import { CommentsPage } from '../pages/comments/comments';
 
 import { ActivityPage } from '../pages/activity/activity';
@@ -23,7 +24,8 @@ import { Globals } from "../providers/globals"
     TabsPage,
     ActivityPage,
     ProfilePage,
-    CommentsPage
+    CommentsPage, 
+    ModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -37,7 +39,8 @@ import { Globals } from "../providers/globals"
     TabsPage,
     ActivityPage,
     ProfilePage,
-    CommentsPage
+    CommentsPage, 
+    ModalPage
   ],
   providers: [Profile, Globals]
 })

@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
+import { ModalPage } from "../modal/modal"
 
 @Component({
   selector: 'page-home',
@@ -9,6 +10,9 @@ import { CommentsPage } from "../comments/comments"
 })
 export class HomePage {
   commentsPage = CommentsPage;
+
+  modalRoot: any = ModalPage;
+
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController
@@ -71,29 +75,9 @@ export class HomePage {
     timestamp: "2016-09-05T04:09:45+00:00"
   }]
   placeOrder(item) { 
-    let modal = this.modalCtrl.create(ModalContentPage);
+    let modal = this.modalCtrl.create(ModalPage);
     modal.present();
 }
 }
-
-@Component({
-  template: `
-test
-`
-})
-export class ModalContentPage {
-  character;
-
-  constructor(
-    public platform: Platform,
-    public params: NavParams,
-    public viewCtrl: ViewController
-  ) {
-  }
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
-}
-
 
 

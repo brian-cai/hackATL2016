@@ -35,11 +35,11 @@ def eatStreetViewMenu(apiKey):
     return r.text
 
 
-@app.route("/eatstreet/order/<restaurantAPI>/<items>/<deliveryOrPIckup>/<cashOrCard>/<testOrderTF>/<tipAmount>/<personAPI>")
-def eatStreetOrder(restaurantAPI, items, deliveryOrPickup, cashOrCard, testOrderTF, tipAmount, personAPI):
-    url = "https://api.eatstreet.com/publicapi/v1/send-order?restaurantApiKey=" + "RESTAURANTAPI" + \
-    "&items=" + "XXX" + "&method=" + "XXX" + "&payment=" + "XXX" + "&test=" + "true&tip=" + "XXX" + \
-    "&card=" + "PERSONAPI" + "&address="+ "PERSONAPI" + "&recipient=" + "PERSONAPI"
+@app.route("/eatstreet/order/<restaurantAPI>/<items>/<deliveryOrPickup>/<cashOrCard>/<tipAmount>/<personAPI>")
+def eatStreetOrder(restaurantAPI, items, deliveryOrPickup, cashOrCard, tipAmount, personAPI):
+    url = "https://api.eatstreet.com/publicapi/v1/send-order?restaurantApiKey=" + restaurantAPI + \
+    "&items=" + items + "&method=" + deliveryOrPickup + "&payment=" + cashOrCard + "&test=" + "true&tip=" + tipAmount + \
+    "&card=" + personAPI + "&address="+ personAPI + "&recipient=" + personAPI
     headers = {'X-Access-Token': 'b7bcd5837cd7dd95'} 
     r = requests.get(url, headers=headers)
     return r.text
@@ -54,25 +54,27 @@ def eatStreetRegisterUser(email, password, firstName, lastName, phone):
     return r.text
 
 #fix this apartment #
-@app.route("/eatstreet/registerUser/<personAPI>/<opt>/<street>/<city>/<state>/<zipCode>")
-def addAddress(personAPI, opt, street, city, state, zipCode):
+@app.route("/eatstreet/registerUser/<personAPI>/<aptNum>/<street>/<city>/<state>/<zipCode>")
+def addAddress(personAPI, aptNum, street, city, state, zipCode):
     url = 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-address?apiKey=' + \
-    'PERSONAPI&aptNumber=' + person API + '(opt)' + '&streetAddress=' + street + '&city=' + \
-    city + '&state=' + city + '&zip=' + zipCode
+    personAPI  + '&streetAddress=' + street + '&city=' + \
+    city + '&state=' + state + '&zip=' + zipCode
+    if int(aptNum) != -1:
+        url += '&aptNumber=' + aptNum
     headers = {'X-Access-Token': 'b7bcd5837cd7dd95', "Content-Type": "application/json"} 
     r = requests.get(url, headers=headers)
     return r.text
 
-@app.route("/eatstreet/registerUser/<name>/<address>/<zipCode>/<cvv>/<cardNumber>/<expirationMonth>/<expirationYear>")
+@app.route("/eatstreet/registerUser/<personAPI>/<name>/<address>/<zipCode>/<cvv>/<cardNumber>/<expirationMonth>/<expirationYear>")
 def addCreditCard(name, address, zipCode, cvv, cardNumber, expirationMonth, expirationYear):
-    url = 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-card?apiKey=PERSONAPI&cardholderName=' + name + \
+    url = 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-card?apiKey=' + personAPI + '&cardholderName=' + name + \
     '&cardholderStreetAddress=' + address + '&cardholderZip=' + zipCode + '&cvv=' + cvv + \
     '&cardNumber=' + cardNumber + '&expirationMonth=' + expirationMonth + '&expirationYear=' + expirationYear
     headers = {'X-Access-Token': 'b7bcd5837cd7dd95', "Content-Type": "application/json"} 
     r = requests.get(url, headers=headers)
     return r.text
 
-@app.route("/eatstreet/search/<address>")
+@app.route("/eatstreet/login/<email>/<password>")
 def eatStreetLogin(email, password):
     url = 'https://api.eatstreet.com/publicapi/v1/signin?email=' + email + '&password=' + password
     headers = {'X-Access-Token': 'b7bcd5837cd7dd95', "Content-Type": "application/json"} 

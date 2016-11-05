@@ -18,5 +18,5 @@ export class ActivityPage {
   ionViewDidLoad() {
     console.log('Hello ActivityPage Page');
   }
-
+  view = "deliveries"
 }

@@ -6,9 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Activity</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-segment [(ngModel)]="view">
+			<ion-segment-button value="deliveries">
+				Deliveries
+			</ion-segment-button>
+			<ion-segment-button value="posts">
+				Posts
+			</ion-segment-button>
+		</ion-segment>
+	</ion-navbar>
 
 </ion-header>
 

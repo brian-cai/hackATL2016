@@ -1,6 +1,8 @@
 <ion-header>
 	<ion-navbar>
-		<ion-title>Home</ion-title>
+		<ion-title>
+			<img src="assets/logo-header.png" alt="">
+		</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -9,10 +11,16 @@
 
 		<ion-item>
 			<ion-avatar item-left>
-        <img [src]="post.user.profileImg">
+				<img [src]="post.user.profileImg">
 			</ion-avatar>
 			<h2>{{post.user.name}}</h2>
 			<p>{{longDate(post.timestamp)}}</p>
+			<ion-note item-right icon-left class="sponsor" *ngIf="post.sponsored">
+				<div class="inner">
+					<ion-icon name="flame"></ion-icon>
+					Sponsored
+				</div>
+			</ion-note>
 		</ion-item>
 
 		<img (press)="placeOrder(post)" [src]="post.image">

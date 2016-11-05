@@ -1,9 +1,7 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-searchbar animated="true" [(ngModel)]="search" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>

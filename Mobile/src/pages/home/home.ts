@@ -69,7 +69,7 @@ export class HomePage {
     caption: "Mmmmmm, chicken wings!",
     timestamp: "2016-09-05T04:09:45+00:00"
   }]
-  placeOrder(item) {
-    alert("Hello" + item.content);
+  placeOrder(item) { 
+    
   }
 }

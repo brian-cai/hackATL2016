@@ -11,89 +11,195 @@
 
 </head>
 <body>
-
-<script>
-
-var entry = prompt("Type in relevant data");
-function testAj(entry)
-{
+<!-- This runs the doIt() function and maps it to the button. >Run the request< is the name-->
+<button onclick="doIt()">Here is the button</button>
 
 
 
-        // Request the JSON and process it
-    $.ajax({
-        type:'GET',
-        url:"http://api.urbandictionary.com/v0/define?term=" + entry,
-        //data:"id="+flickrid+"&lang=en-us&format=json&jsoncallback=?",
-        success:function(data) {
-                console.log("success!\n");
-                //this prints out the object object
-                //console.log(data);
-                //added code
-                var newShit = JSON.stringify(data);
-                console.log(newShit);
-                //end of added code
-
-                /*
-                //saves the thing into an Array
-                theArray = data;
-                var result = "";
-                for (var i = 0; i<theArray.list.length; i++) {
-                    result += ("Definition " + (i+1) + ": " + theArray.list[i].definition + "\n");
-                    result += ("Thumbs up: " + theArray.list[i].thumbs_up + "\n");
-                    result += ("Thumbs down: " + theArray.list[i].thumbs_down + "\n\n");
-                }
-                console.log(result);
-                $('#data').text(result);
-                */
-            
- 
-
-        },
-        
-        dataType:'jsonp'
-    });
-}
-console.log("first one");
-testAj(entry);
-/*
-//mouse stuff
-var rightPressed = false;
-var leftPressed = false;
 
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
-
-//checks if the keys/mouse is clicked or not
-function keyDownHandler(e) {
-    if(e.keyCode == 39) {
-        rightPressed = true;
-    }
-    else if(e.keyCode == 37) {
-        leftPressed = true;
-    }
-}
-
-function keyUpHandler(e) {
-    if(e.keyCode == 39) {
-        rightPressed = false;
-    }
-    else if(e.keyCode == 37) {
-        leftPressed = false;
-    }
-}
-function mouseMoveHandler(e) {
-    var mouseThing = e.clientX - canvas.offsetLeft;
-    if(mouseThing > 0 && mouseThing < canvas.width) {
-        bumperL = mouseThing - bumperWidth/2;
-    }
-}
-*/
-
-
-</script>
-
+   <div class="ysection">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>string</td>
+                    <td>Yelp ID of this business.</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>string</td>
+                    <td>Name of this business.</td>
+                </tr>
+                <tr>
+                    <td>image_url</td>
+                    <td>string</td>
+                    <td>URL of photo for this business.</td>
+                </tr>
+                <tr>
+                    <td>is_claimed</td>
+                    <td>bool</td>
+                    <td>Whether business has been claimed by a business owner</td>
+                </tr>
+                <tr>
+                    <td>is_closed</td>
+                    <td>bool</td>
+                    <td>Whether business has been (permanently) closed</td>
+                </tr>
+                <tr>
+                    <td>url</td>
+                    <td>string</td>
+                    <td>URL for business page on Yelp.</td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td>string</td>
+                    <td>Price level of the business. Value is one of $, $$, $$$ and $$$$.</td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>string</td>
+                    <td>Phone number of the business.</td>
+                </tr>
+                <tr>
+                    <td>rating</td>
+                    <td>decimal</td>
+                    <td>Rating for this business (value ranges from 1, 1.5, ... 4.5, 5).</td>
+                </tr>
+                <tr>
+                    <td>review_count</td>
+                    <td>int</td>
+                    <td>Number of reviews for this business.</td>
+                </tr>
+                <tr>
+                    <td>photos</td>
+                    <td>object[]</td>
+                    <td>URLs of up to three photos of the business.</td>
+                </tr>
+                <tr>
+                    <td>hours</td>
+                    <td>object[]</td>
+                    <td>Opening hours of the business.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].is_open_now</td>
+                    <td>boolean</td>
+                    <td>Whether the business is currently open or not.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].hours_type</td>
+                    <td>string</td>
+                    <td>The type of the opening hours information. Right now, always return REGULAR.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open</td>
+                    <td>object[]</td>
+                    <td>The detailed opening hours of each day in a week.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open[x].day</td>
+                    <td>int</td>
+                    <td>From 0 to 6, representing day of the week from Monday to Sunday. Notice that you may get the same day of the week more than once if the business has more than one opening time slots.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open[x].start</td>
+                    <td>string</td>
+                    <td>Start of the opening hours in a day, in <a href="https://en.wikipedia.org/wiki/24-hour_clock">24-hour clock</a> notation, like 1000 means 10 AM.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open[x].start</td>
+                    <td>string</td>
+                    <td>Start of the opening hours in a day, in <a href="https://en.wikipedia.org/wiki/24-hour_clock">24-hour clock</a> notation, like 1000 means 10 AM.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open[x].end</td>
+                    <td>string</td>
+                    <td>End of the opening hours in a day, in <a href="https://en.wikipedia.org/wiki/24-hour_clock">24-hour clock</a> notation, like 2130 means 9:30 PM.</td>
+                </tr>
+                <tr>
+                    <td>hours[x].open[x].is_overnight</td>
+                    <td>boolean</td>
+                    <td>Whether the business opens overnight or not. When this is true, the end time will be lower than the start time.</td>
+                </tr>
+                <tr>
+                    <td>categories</td>
+                    <td>object[]</td>
+                    <td>A list of category title and alias pairs associated with this business.</td>
+                </tr>
+                <tr>
+                    <td>categories[x].alias</td>
+                    <td>string</td>
+                    <td>Alias of a category, when searching for business in certain categories, use alias rather than the title.</td>
+                </tr>
+                <tr>
+                    <td>categories[x].title</td>
+                    <td>string</td>
+                    <td>Title of a category for display purpose.</td>
+                </tr>
+                <tr>
+                    <td>coordinates</td>
+                    <td>object</td>
+                    <td>The coordinates of this business.</td>
+                </tr>
+                <tr>
+                    <td>coordinates.latitude</td>
+                    <td>decimal</td>
+                    <td>The latitude of this business.</td>
+                </tr>
+                <tr>
+                    <td>coordinates.longitude</td>
+                    <td>decimal</td>
+                    <td>The longitude of this business.</td>
+                </tr>
+                <tr>
+                    <td>location</td>
+                    <td>object</td>
+                    <td>The location of this business, including address, city, state, zip code and country.</td>
+                </tr>
+                <tr>
+                    <td>location.address1</td>
+                    <td>string</td>
+                    <td>Street address of this business.</td>
+                </tr>
+                <tr>
+                    <td>location.address2</td>
+                    <td>string</td>
+                    <td>Street address of this business, continued.</td>
+                </tr>
+                <tr>
+                    <td>location.address3</td>
+                    <td>string</td>
+                    <td>Street address of this business, continued.</td>
+                </tr>
+                <tr>
+                    <td>location.city</td>
+                    <td>string</td>
+                    <td>City of this business.</td>
+                </tr>
+                <tr>
+                    <td>location.state</td>
+                    <td>string</td>
+                    <td><a href="https://en.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> State code of this business.</td>
+                </tr>
+                <tr>
+                    <td>location.zip_code</td>
+                    <td>string</td>
+                    <td><a href="https://en.wikipedia.org/wiki/Postal_code">Zip code</a> of this business.</td>
+                </tr>
+                <tr>
+                    <td>location.country</td>
+                    <td>string</td>
+                    <td><a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> country code of this business.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!--Testing the API-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Testing API</title>
+    <h1 align="center">Testing API</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<script>
+
+var entry = prompt("Type in relevant data");
+function testAj(entry)
+{
+
+
+
+        // Request the JSON and process it
+    $.ajax({
+        type:'GET',
+        url:"http://api.urbandictionary.com/v0/define?term=" + entry,
+        //data:"id="+flickrid+"&lang=en-us&format=json&jsoncallback=?",
+        success:function(data) {
+                console.log("success!\n");
+                //this prints out the object object
+                //console.log(data);
+                //added code
+                var newShit = JSON.stringify(data);
+                console.log(newShit);
+                //end of added code
+
+                /*
+                //saves the thing into an Array
+                theArray = data;
+                var result = "";
+                for (var i = 0; i<theArray.list.length; i++) {
+                    result += ("Definition " + (i+1) + ": " + theArray.list[i].definition + "\n");
+                    result += ("Thumbs up: " + theArray.list[i].thumbs_up + "\n");
+                    result += ("Thumbs down: " + theArray.list[i].thumbs_down + "\n\n");
+                }
+                console.log(result);
+                $('#data').text(result);
+                */
+            
+ 
+
+        },
+        
+        dataType:'jsonp'
+    });
+}
+console.log("first one");
+testAj(entry);
+/*
+//mouse stuff
+var rightPressed = false;
+var leftPressed = false;
+
+
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
+
+//checks if the keys/mouse is clicked or not
+function keyDownHandler(e) {
+    if(e.keyCode == 39) {
+        rightPressed = true;
+    }
+    else if(e.keyCode == 37) {
+        leftPressed = true;
+    }
+}
+
+function keyUpHandler(e) {
+    if(e.keyCode == 39) {
+        rightPressed = false;
+    }
+    else if(e.keyCode == 37) {
+        leftPressed = false;
+    }
+}
+function mouseMoveHandler(e) {
+    var mouseThing = e.clientX - canvas.offsetLeft;
+    if(mouseThing > 0 && mouseThing < canvas.width) {
+        bumperL = mouseThing - bumperWidth/2;
+    }
+}
+*/
+
+
+</script>
+
+</body>
+</html>

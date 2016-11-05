@@ -16,3 +16,8 @@ The search would already be filled out hamburger@restaurant
 
 
 embedded grubhub
+
+
+looker customer --- looking at food
+
+order customer --- buyer of food --- address credit card attached

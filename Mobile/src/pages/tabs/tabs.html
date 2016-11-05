@@ -1,7 +1,7 @@
 <ion-tabs>
   <ion-tab [root]="feedRoot" tabTitle="Feed" tabIcon="paper"></ion-tab>
   <ion-tab [root]="searchRoot" tabTitle="Search" tabIcon="search"></ion-tab>
-  <ion-tab [root]="importRoot" tabIcon="camera"></ion-tab><!--  tabTitle="Contact" -->
+  <ion-tab (ionSelect)="importModal()" tabIcon="camera"></ion-tab><!--  tabTitle="Contact" -->
   <ion-tab [root]="activityRoot" tabTitle="Activity" tabIcon="analytics"></ion-tab>
   <ion-tab [root]="profileRoot" tabTitle="Profile" tabIcon="person"></ion-tab>
 </ion-tabs>

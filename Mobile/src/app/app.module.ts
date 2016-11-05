@@ -11,6 +11,9 @@ import { ProfilePage } from '../pages/profile/profile';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { Profile } from "../providers/profile"
+import { Globals } from "../providers/globals"
+
 @NgModule({
   declarations: [
     MyApp,
@@ -36,6 +39,6 @@ import { TabsPage } from '../pages/tabs/tabs';
     ProfilePage,
     CommentsPage
   ],
-  providers: []
+  providers: [Profile, Globals]
 })
 export class AppModule { }

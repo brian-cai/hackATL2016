@@ -28,12 +28,13 @@ EatStreet make delivery
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' 'https://api.eatstreet.com/publicapi/v1/send-order?restaurantApiKey=RESTAURANTAPI&items=XXX&method=XXX&payment=XXX&test=true&tip=XXX&card=PERSONAPI&address=PERSONAPI&recipient=PERSONAPI'
 make 6 parameters or whatever
 
-#
 EatStreet register-user
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/register-user?email=XXX&password=XXX&firstName=XXX&lastName=XXX&phone=XXX'
 
 EatStreet add address
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-address?apiKey=PERSONAPI&aptNumber=XXX(opt)&streetAddress=XXX&city=XXX&state=XXX&zip=XXX'
+
+#
 
 EatStreet add credit card
 curl -X GET -H 'X-Access-Token: b7bcd5837cd7dd95' -H 'Content-Type: application/json' 'https://api.eatstreet.com/publicapi/v1/user/PERSONAPI/add-card?apiKey=PERSONAPI&cardholderName=XXX&cardholderStreetAddress=XXX&cardholderZip=XXX&cvv=XXX&cardNumber=XXX&expirationMonth=XXX&expirationYear=XXX'

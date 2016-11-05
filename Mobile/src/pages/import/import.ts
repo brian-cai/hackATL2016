@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NavController, ViewController, Platform } from 'ionic-angular';
-import { Camera } from 'ionic-native';
+import { Camera, Transfer } from 'ionic-native';
 import moment from 'moment';
 import 'whatwg-fetch';
+// import CryptoJS from 'crypto-js';
+
 
 @Component({
     selector: 'page-import',

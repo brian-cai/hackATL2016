@@ -24,7 +24,7 @@ export class HomePage {
       username: "wilsonhobbs",
       profileImg: "assets/profile1.jpg"
     },
-    likes: ["wilsonhobbs", "nathan", "nick"],
+    likes: ["wilsonhobbs", "nathan"],
     comments: [{
       user: {
         name: "Wilson Hobbs",

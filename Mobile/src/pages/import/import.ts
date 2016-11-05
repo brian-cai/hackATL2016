@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ViewController, Platform } from 'ionic-angular';
 import { Camera } from 'ionic-native';
 import moment from 'moment';
-import * as firebase from 'firebase';
+import CryptoJS from 'crypto-js';
 import 'whatwg-fetch';
 
 @Component({

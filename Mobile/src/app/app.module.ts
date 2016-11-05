@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
-import { ContactPage } from '../pages/contact/contact';
+import { ImportPage } from '../pages/import/import';
 import { HomePage } from '../pages/home/home';
 
 import { ActivityPage } from '../pages/activity/activity';
@@ -14,7 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   declarations: [
     MyApp,
     SearchPage,
-    ContactPage,
+    ImportPage,
     HomePage,
     TabsPage,
     ActivityPage,
@@ -27,7 +27,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   entryComponents: [
     MyApp,
     SearchPage,
-    ContactPage,
+    ImportPage,
     HomePage,
     TabsPage,
     ActivityPage,

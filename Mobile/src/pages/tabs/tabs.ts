@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
 import { SearchPage } from '../search/search';
-import { ContactPage } from '../contact/contact';
+import { ImportPage } from '../import/import';
 import { ProfilePage } from '../profile/profile';
 import { ActivityPage } from '../activity/activity';
 
@@ -14,7 +14,7 @@ export class TabsPage {
   // should be each tab's root Page
   feedRoot: any = HomePage;
   searchRoot: any = SearchPage;
-  importRoot: any = ContactPage;
+  importRoot: any = ImportPage;
   activityRoot: any = ProfilePage;
   profileRoot: any = ActivityPage;
 

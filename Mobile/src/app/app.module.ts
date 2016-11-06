@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { ImportPage } from '../pages/import/import';
@@ -25,7 +26,8 @@ import { Globals } from "../providers/globals"
     TabsPage,
     ActivityPage,
     ProfilePage,
-    CommentsPage
+    CommentsPage,
+    LoginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -39,8 +41,9 @@ import { Globals } from "../providers/globals"
     TabsPage,
     ActivityPage,
     ProfilePage,
-    CommentsPage
+    CommentsPage,
+    LoginPage
   ],
-  providers: [Profile, Globals, User]
+  providers: [Profile, Globals, User, Storage]
 })
 export class AppModule { }

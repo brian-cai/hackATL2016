@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { ImportPage } from '../pages/import/import';
 import { HomePage } from '../pages/home/home';
+import { ModalPage } from '../pages/modal/modal';
 import { CommentsPage } from '../pages/comments/comments';
 import { LoginPage } from '../pages/login/login';
 import { OrderModalPage } from '../pages/order-modal/order-modal';
@@ -29,9 +30,14 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
+<<<<<<< HEAD
     CommentsPage,
     LoginPage,
     OrderModalPage
+=======
+    CommentsPage, 
+    ModalPage
+>>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -45,9 +51,14 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
+<<<<<<< HEAD
     CommentsPage,
     LoginPage,
     OrderModalPage
+=======
+    CommentsPage, 
+    ModalPage
+>>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
   providers: [Profile, Globals, User, Storage, Image, Yelp]
 })

@@ -10,7 +10,9 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class Globals {
-  apiUrl = "http://www.yourmamma.com";
+  apiUrl = "https://mealme-app.herokuapp.com/";
+  dbUrl = "https://mealme-db.herokuapp.com/";
+  apiKey:any;
   constructor(public http: Http) {
     console.log('Hello Globals Provider');
   }

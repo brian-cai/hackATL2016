@@ -1,3 +1,23 @@
+<script>
+
+function test() {
+
+	var DROPBOX_APP_KEY = '1lVqzhv0ZkAAAAAAAAAACyxajramtydw-sdgQqEHE2Gv7y7EHaWLT8qh-vw00Nye';
+  var client = new Dropbox.Client({key: DROPBOX_APP_KEY});
+  client.authDriver(new Dropbox.AuthDriver.Cordova());
+
+		client.writeFile("hello_world.txt", "Hello, world!\n", function(error, stat) {
+    if (error) {
+        return console.log(error);
+    }
+    
+    console.log(stat);
+    console.log("File saved as revision " + stat.versionTag);
+});
+}
+	
+</script>
+
 <ion-header>
 	<ion-navbar>
 		<ion-buttons start>
@@ -11,8 +31,26 @@
 </ion-header>
 
 <ion-content>
-    <p> Rate Yelp <button> Stars </button> </p>
+	<p> Rate Yelp </p>
 
-    <p> Order From EatStreets <button> Order </button> <p>
+	<p> Order From EatStreets <button> Order </button>
+		<p>
+
+			<button class="button button-clear button-positive">
+  Clear Button
+</button>
+
+			<!--<ion-list>
+				<div *ngFor="let folder of folders">
+					<ion-item *ngIf="folder['.tag'] == 'folder'" detail-push (click)="openFolder(folder.path_lower)">
+						{{folder.name}}
+					</ion-item>
+					<ion-item *ngIf="folder['.tag'] == 'file'">
+						{{folder.name}}
+					</ion-item>
+				</div>
+			</ion-list>-->
+
+
 
 </ion-content>

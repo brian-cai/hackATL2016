@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ViewController, Platform } from 'ionic-angular';
 import { Camera, Transfer } from 'ionic-native';
 import moment from 'moment';
-import 'whatwg-fetch';
+// require('aws-sdk/dist/aws-sdk');
+// import 'whatwg-fetch';
 // import CryptoJS from 'crypto-js';
 
 
@@ -12,17 +13,18 @@ import 'whatwg-fetch';
     templateUrl: 'import.html'
 })
 export class ImportPage {
+
     constructor(
         public navCtrl: NavController,
         public viewCtrl: ViewController,
         public platform: Platform
     ) {
     }
-    
-  post: any = {};
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+
+    post: any = {};
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
 
     // ionViewDidLoad() {
     //     let dateTime = moment().format("YYYY-MM-DD\THH:mm:ssZ");
@@ -34,6 +36,9 @@ export class ImportPage {
 
     // imageUrl: String;
     // getPic(method) {
+
+    //     this.setupAWS();
+
     //     let options = {
     //         destinationType: 1,
     //         sourceType: method,
@@ -51,15 +56,32 @@ export class ImportPage {
     //     })
     // }
 
+    // public setupAWS() {
+    //     var albumBucketName = 'BUCKET_NAME';
+    //     var bucketRegion = 'REGION';
+    //     var IdentityPoolId = 'IDENTITY_POOL_ID';
+
+    //     AWS.config.update({
+    //         region: bucketRegion,
+    //         credentials: new AWS.CognitoIdentityCredentials({
+    //             IdentityPoolId: IdentityPoolId
+    //         })
+    //     });
+
+    //     var s3 = new AWS.S3({
+    //         apiVersion: '2006-03-01',
+    //         params: { Bucket: albumBucketName }
+    //     });
+    // }
 
     // public getSignatureKey(key, dateStamp, regionName, serviceName) {
 
-    //     var kDate = CryptoJS.HmacSHA256(dateStamp, "AWS4" + key, { asBytes: true })
-    //     var kRegion = CryptoJS.HmacSHA256(regionName, kDate, { asBytes: true });
-    //     var kService = CryptoJS.HmacSHA256(serviceName, kRegion, { asBytes: true });
-    //     var kSigning = CryptoJS.HmacSHA256("aws4_request", kService, { asBytes: true });
+    //     // var kDate = CryptoJS.HmacSHA256(dateStamp, "AWS4" + key, { asBytes: true })
+    //     // var kRegion = CryptoJS.HmacSHA256(regionName, kDate, { asBytes: true });
+    //     // var kService = CryptoJS.HmacSHA256(serviceName, kRegion, { asBytes: true });
+    //     // var kSigning = CryptoJS.HmacSHA256("aws4_request", kService, { asBytes: true });
 
-    //     return kSigning.words.join('');
+    //     // return kSigning.words.join('');
     // }
 
     // submit() {

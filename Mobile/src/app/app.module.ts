@@ -16,6 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Profile } from "../providers/profile"
 import { User } from "../providers/user"
 import { Globals } from "../providers/globals"
+import { Dropbox } from '../providers/dropbox';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,6 @@ import { Globals } from "../providers/globals"
     CommentsPage, 
     ModalPage
   ],
-  providers: [Profile, Globals, User]
+  providers: [Profile, Globals, User, Dropbox]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
 import { Component, NgModule } from '@angular/core';
-import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
+import { ModalController, Platform, NavParams, ViewController, NavController, LoadingController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
 import { ModalPage } from "../modal/modal"
+
 
 @Component({
   selector: 'page-home',
@@ -46,38 +47,40 @@ export class HomePage {
     timestamp: "2016-11-05T04:09:45+00:00",
     sponsored: true
   },
-  {
-    user: {
-      name: "Nate",
-      username: "nate",
-      profileImg: "https://images.unsplash.com/photo-1475155000329-a5679839c452"
-    },
-    likes: ["wilsonhobbs", "nathan", "nick"],
-    comments: [{
-      user: {
-        name: "Wilson Hobbs",
-        profileImg: "assets/profile1.jpg",
-        username: "wilsonhobbs"
-      },
-      content: "I love this!",
-      timestamp: "2016-11-05T04:09:45+00:00"
-    }, {
+    {
       user: {
         name: "Nate",
-        profileImg: "https://images.unsplash.com/photo-1475155000329-a5679839c452",
-        username: "nate"
+        username: "nate",
+        profileImg: "https://images.unsplash.com/photo-1475155000329-a5679839c452"
       },
-      content: "This is the worst pic ever!",
-      timestamp: "2016-11-05T04:09:45+00:00"
-    }],
-    image: "https://images.unsplash.com/photo-1426869981800-95ebf51ce900",
-    caption: "Mmmmmm, chicken wings!",
-    timestamp: "2016-09-05T04:09:45+00:00"
-  }]
-  placeOrder(item) { 
+      likes: ["wilsonhobbs", "nathan", "nick"],
+      comments: [{
+        user: {
+          name: "Wilson Hobbs",
+          profileImg: "assets/profile1.jpg",
+          username: "wilsonhobbs"
+        },
+        content: "I love this!",
+        timestamp: "2016-11-05T04:09:45+00:00"
+      }, {
+          user: {
+            name: "Nate",
+            profileImg: "https://images.unsplash.com/photo-1475155000329-a5679839c452",
+            username: "nate"
+          },
+          content: "This is the worst pic ever!",
+          timestamp: "2016-11-05T04:09:45+00:00"
+        }],
+      image: "https://images.unsplash.com/photo-1426869981800-95ebf51ce900",
+      caption: "Mmmmmm, chicken wings!",
+      timestamp: "2016-09-05T04:09:45+00:00"
+    }]
+
+  placeOrder(item) {
     let modal = this.modalCtrl.create(ModalPage);
     modal.present();
-}
+  }
+
 }
 
 

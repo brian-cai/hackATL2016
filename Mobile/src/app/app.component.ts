@@ -7,6 +7,8 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home';
+import { ProfilePage } from '../pages/profile/profile';
 
 
 @Component({
@@ -37,7 +39,7 @@ export class MyApp {
         this.rootPage = TabsPage;
       }
       else {
-        this.rootPage = LoginPage;
+        this.rootPage = HomePage;
       }
     });
 

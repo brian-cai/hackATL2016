@@ -16,9 +16,6 @@
 			Order
 		</ion-title>
 		<ion-buttons end>
-			<button ion-button (click)="submit()">
-				Submit
-      </button>
 		</ion-buttons>
 	</ion-navbar>
 
@@ -26,5 +23,53 @@
 
 
 <ion-content>
-  
+	<ion-item>
+
+		<ion-item>
+			<img [src]="imageSrc">
+		</ion-item>
+<ion-card>
+			<img [src]="foodImageSrc">
+</ion-card>
+		<ion-row>
+			<ion-col>
+				<ion-icon name="cafe"></ion-icon> Resturant : Willy's <br>
+				<ion-icon name="cash"></ion-icon> Price: ${{totalPrice}} <br> Address: Atlanta, GA 30302
+			</ion-col>
+
+			<ion-col>
+				<button ion-button icon-right (click)="presentToast()">
+  				Order  <ion-icon name="car"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+
+	</ion-item>
+
+	<ion-item>
+		<ion-label> Amount: {{foodAmount}} </ion-label>
+		<ion-range min="1" max="10" step="1" snaps="true" color="secondary" [(ngModel)]="foodAmount" (ionChange)="changePrice($event)"></ion-range>
+	</ion-item>
+
+
+<ion-card>
+	<ion-list can-swipe="listCanSwipe" type="list-inset">
+		<ion-list-header>
+  Menu
+</ion-list-header>
+		<ion-row>
+			<ion-col> Burgers </ion-col>
+			<ion-col> $5.75 </ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col> Hotdogs </ion-col>
+			<ion-col> $4.65 </ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col> Pie </ion-col>
+			<ion-col> $2.65 </ion-col>
+		</ion-row>
+	</ion-list>
+	</ion-card>
+
 </ion-content>

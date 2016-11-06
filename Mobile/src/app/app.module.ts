@@ -17,14 +17,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { Profile } from "../providers/profile"
 import { User } from "../providers/user"
-<<<<<<< HEAD
 import { Globals } from "../providers/globals"
 import { Dropbox } from '../providers/dropbox';
-=======
-import { Globals } from "../providers/globals";
 import { Image } from "../providers/image";
 import { Yelp } from "../providers/yelp";
->>>>>>> origin/master
 
 @NgModule({
   declarations: [
@@ -35,14 +31,10 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
-<<<<<<< HEAD
     CommentsPage,
     LoginPage,
-    OrderModalPage
-=======
-    CommentsPage, 
+    OrderModalPage,
     ModalPage
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -56,19 +48,11 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
-<<<<<<< HEAD
     CommentsPage,
     LoginPage,
-    OrderModalPage
-=======
-    CommentsPage, 
+    OrderModalPage,
     ModalPage
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
-<<<<<<< HEAD
-  providers: [Profile, Globals, User, Dropbox]
-=======
-  providers: [Profile, Globals, User, Storage, Image, Yelp]
->>>>>>> origin/master
+  providers: [Profile, Globals, User, Storage, Image, Yelp, Dropbox]
 })
 export class AppModule { }

@@ -1,7 +1,9 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
+import { OrderModalPage } from '../order-modal/order-modal';
+import {Yelp} from '../../providers/yelp';
 
 @Component({
   selector: 'page-home',
@@ -11,7 +13,8 @@ export class HomePage {
   commentsPage = CommentsPage;
   constructor(
     public navCtrl: NavController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public yelp:Yelp
   ) {
 
   }
@@ -69,31 +72,13 @@ export class HomePage {
     image: "https://images.unsplash.com/photo-1426869981800-95ebf51ce900",
     caption: "Mmmmmm, chicken wings!",
     timestamp: "2016-09-05T04:09:45+00:00"
-  }]
-  placeOrder(item) { 
-    let modal = this.modalCtrl.create(ModalContentPage);
+  }];
+
+  placeOrder(item) {
+    console.log("PRESSED")
+    let modal = this.modalCtrl.create(OrderModalPage, item);
     modal.present();
-}
-}
-
-@Component({
-  template: `
-test
-`
-})
-export class ModalContentPage {
-  character;
-
-  constructor(
-    public platform: Platform,
-    public params: NavParams,
-    public viewCtrl: ViewController
-  ) {
-  }
-  dismiss() {
-    this.viewCtrl.dismiss();
   }
 }
-
 
 

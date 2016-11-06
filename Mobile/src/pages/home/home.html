@@ -14,20 +14,21 @@
 				<img [src]="post.user.profileImg">
 			</ion-avatar>
 			<h2>{{post.user.name}}</h2>
-			<p>{{longDate(post.timestamp)}}</p>
+			<p>{{post.restaurant}}</p>
 			<ion-note item-right icon-left class="sponsor" *ngIf="post.sponsored">
 				<div class="inner">
 					<ion-icon name="flame"></ion-icon>
 					Sponsored
 				</div>
 			</ion-note>
+			<ion-note *ngIf="!post.sponsored" item-right>
+				{{ago(post.timestamp)}}
+			</ion-note>
 		</ion-item>
 
-		<img (press)="placeOrder(post)" [src]="post.image">
-
-		<ion-card-content>
-			<p>{{post.caption}}</p>
-		</ion-card-content>
+		<div (click)="placeOrder(post)">
+			<img [src]="post.image">
+		</div>
 
 		<ion-row padding>
 			<ion-col>
@@ -43,11 +44,13 @@
       </button>
 			</ion-col>
 			<ion-col center text-center>
-				<ion-note>
-					{{ago(post.timestamp)}}
-				</ion-note>
+				<ion-icon name="star" *ngFor="let item of [0,1,2,3,4]"></ion-icon>
 			</ion-col>
 		</ion-row>
+		<ion-card-content>
+			<p>{{post.caption}}</p>
+		</ion-card-content>
+
 
 	</ion-card>
 </ion-content>

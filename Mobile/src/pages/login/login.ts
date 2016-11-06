@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs"
 
+import { Storage } from '@ionic/storage';
+
 /*
   Generated class for the Login9 page.
 
@@ -30,7 +32,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public user: User,
-    public globals: Globals
+    public globals: Globals,
+    public storage: Storage
   ) {
 
   }
@@ -64,8 +67,9 @@ export class LoginPage {
         if (res.error) {
           alert(res);
         } else {
-          this.globals.apiKey = res.data.apiKey;
-          this.userdetails = res.data.apiKey;
+          this.storage.set("apiKey", res.apiKey);
+          this.globals.apiKey = res.apiKey;
+          this.userdetails.apiKey = res.apiKey;
           this.navCtrl.setRoot(TabsPage);
         }
       },
@@ -84,30 +88,33 @@ export class LoginPage {
         if (res.error) {
           alert(res.details);
         } else {
-          this.globals.apiKey = res.data.apiKey;
-          this.userdetails.apiKey = res.data.apiKey;
+          this.globals.apiKey = res.apiKey;
+          this.userdetails.apiKey = res.apiKey;
           this.navCtrl.setRoot(TabsPage);
+
+          this.user.regNative(this.userdetails, this.globals.apiKey).subscribe(
+            res => {
+              console.log(res);
+              if (res.error) {
+                alert(res.details);
+              } else {
+                this.storage.set("apiKey", res.apiKey);
+                this.globals.apiKey = res.apiKey;
+                this.navCtrl.setRoot(TabsPage);
+              }
+            },
+            err => {
+              console.log("err", err);
+            },
+            () => {
+              console.log(this.userdetails, this.globals.apiKey);
+              //event.complete();
+            }
+          );
         }
       },
       err => {
-        console.log("err", err.details);
-      },
-      () => {
-        //event.complete();
-      }
-    );
-    this.user.regNative(this.userdetails).subscribe(
-      res => {
-        console.log(res);
-        if (res.error) {
-          alert(res.details);
-        } else {
-          this.globals.apiKey = res.data.apiKey;
-          this.navCtrl.setRoot(TabsPage);
-        }
-      },
-      err => {
-        console.log("err", err.details);
+        console.log("err", err);
       },
       () => {
         //event.complete();

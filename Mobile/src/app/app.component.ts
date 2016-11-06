@@ -28,8 +28,8 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
-        this.rootPage = TabsPage;
-/*
+    //this.rootPage = TabsPage;
+
     this.storage.get("apiKey").then((apiKey) => {
       if (apiKey) {
         this.apiKey = apiKey;
@@ -40,5 +40,7 @@ export class MyApp {
         this.rootPage = LoginPage;
       }
     });
-  }*/
+
+    
+  }
 }

@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+[ion-fixed] {
+    width: 100%;
+}
+
+.btn-holder {
+    width: 200px;
+    text-align: center;
+    left: 50%;
+    transform: perspective(1px) translateX(-50%) !important;
+}
+
+.footer-content {
+    position: fixed;
+    bottom: 30px;
+}
+
+.btn-holder .button-block:first-child {
+    margin-bottom: 15px;
+}

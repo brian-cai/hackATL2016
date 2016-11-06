@@ -44,7 +44,7 @@
       </button>
 			</ion-col>
 			<ion-col center text-center>
-				<ion-icon name="star" *ngFor="let item of [0,1,2,3,4]"></ion-icon>
+				<ion-icon name="star" *ngFor="let item of getRating(post.restaurantId)" [style.color]="item.good"></ion-icon>
 			</ion-col>
 		</ion-row>
 		<ion-card-content>

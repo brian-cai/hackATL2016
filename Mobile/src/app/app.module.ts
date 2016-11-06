@@ -30,14 +30,9 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
-<<<<<<< HEAD
     CommentsPage,
     LoginPage,
     OrderModalPage
-=======
-    CommentsPage, 
-    ModalPage
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -51,14 +46,9 @@ import { Yelp } from "../providers/yelp";
     TabsPage,
     ActivityPage,
     ProfilePage,
-<<<<<<< HEAD
     CommentsPage,
     LoginPage,
     OrderModalPage
-=======
-    CommentsPage, 
-    ModalPage
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
   ],
   providers: [Profile, Globals, User, Storage, Image, Yelp]
 })

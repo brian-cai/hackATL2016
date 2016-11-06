@@ -2,12 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController, NavController } from 'ionic-angular';
 import moment from "moment";
 import { CommentsPage } from "../comments/comments"
-<<<<<<< HEAD
 import { OrderModalPage } from '../order-modal/order-modal';
-import {Yelp} from '../../providers/yelp';
-=======
-import { ModalPage } from "../modal/modal"
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
+import { Yelp } from '../../providers/yelp';
 
 @Component({
   selector: 'page-home',
@@ -16,12 +12,10 @@ import { ModalPage } from "../modal/modal"
 export class HomePage {
   commentsPage = CommentsPage;
 
-  modalRoot: any = ModalPage;
-
   constructor(
     public navCtrl: NavController,
     public modalCtrl: ModalController,
-    public yelp:Yelp
+    public yelp: Yelp
   ) {
 
   }
@@ -50,7 +44,8 @@ export class HomePage {
     image: "assets/testimg.jpg",
     caption: "I adore this pineapple!",
     timestamp: "2016-11-05T04:09:45+00:00",
-    sponsored: true
+    sponsored: true,
+    restaurantId: "great-wraps-atlanta-7"
   },
   {
     user: {
@@ -78,8 +73,8 @@ export class HomePage {
     }],
     image: "https://images.unsplash.com/photo-1426869981800-95ebf51ce900",
     caption: "Mmmmmm, chicken wings!",
-    timestamp: "2016-09-05T04:09:45+00:00"
-<<<<<<< HEAD
+    timestamp: "2016-09-05T04:09:45+00:00",
+    restaurantId: "the-collective-a-salon-atlanta"
   }];
 
   placeOrder(item) {
@@ -87,13 +82,32 @@ export class HomePage {
     let modal = this.modalCtrl.create(OrderModalPage, item);
     modal.present();
   }
-=======
-  }]
-  placeOrder(item) { 
-    let modal = this.modalCtrl.create(ModalPage);
-    modal.present();
-}
->>>>>>> 1148029801c32cd75ffe377becfec2f88fc4107d
+  getRating(id) {
+    var endArray = [];
+    this.yelp.getRating({
+      id: id
+    }).subscribe(
+      res => {
+        console.log(res);
+        var rnd = Math.round(res);
+        for (let i = 0; i < 4; i++) {
+          var good = "#333";
+          if (i < rnd) {
+            good = "gold";
+          }
+          endArray.push({
+            good: good,
+            index: i
+          });
+        }
+        return endArray;
+      },
+      err => {
+      },
+      () => {
+      }
+      )
+  }
 }
 
 

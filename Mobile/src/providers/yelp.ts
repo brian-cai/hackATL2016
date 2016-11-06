@@ -20,8 +20,16 @@ export class Yelp {
     console.log('Hello Yelp Provider');
   }
   search(params) {
-    let eatStreetsUrl = this.globals.apiUrl + "yelp/search/" + params.location + "/" + params.searchTerm;
-    return this.http.get(eatStreetsUrl)
+    let url = this.globals.apiUrl + "yelp/search/" + params.location + "/" + params.searchTerm;
+    return this.http.get(url)
+      .map((results: Response) => {
+        return results.json();
+      })
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+  getRating(params) {
+    let url = this.globals.apiUrl + "yelp/ratings/" + params.id;
+    return this.http.get(url)
       .map((results: Response) => {
         return results.json();
       })

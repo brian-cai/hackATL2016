@@ -37,17 +37,27 @@
 			<ion-textarea placeholder="Caption..." [(ngModel)]="post.caption"></ion-textarea>
 		</ion-item>
 		<ion-item>
-			<ion-label color="primary">Location</ion-label>
-			<ion-input placeholder="Where are you?" [(ngModel)]="post.location"></ion-input>
-		</ion-item>
-		<ion-item>
 			<ion-label color="primary">Food</ion-label>
 			<ion-input placeholder="What are you eating?" [(ngModel)]="post.food"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label color="primary">Restaurant</ion-label>
-			<ion-input placeholder="What's this place called?" [(ngModel)]="post.restaurant"></ion-input>
+			<ion-input placeholder="What's this place called?" [(ngModel)]="post.restaurant" (keyup)="search()"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label color="primary">Location</ion-label>
+			<ion-input placeholder="Where are you?" [(ngModel)]="post.location" (keyup)="search()"></ion-input>
+		</ion-item>
+	</ion-list>
+	<ion-list radio-group [(ngModel)]="post.restaurantId">
+		<ion-list-header>
+			Did you mean?
+		</ion-list-header>
+		<ion-item *ngFor="let item of yelpResults">
+			<ion-label>{{item.name}}</ion-label>
+			<ion-radio value="{{item.id}}"></ion-radio>
 		</ion-item>
 	</ion-list>
 </ion-content>

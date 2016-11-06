@@ -13,12 +13,19 @@ def yelpSearch(location, restaurant):
     r = requests.get(url, headers=headers)
     return r.text
 
+# @app.route("/yelp/ratings/<restaurantID>")
+# def yelpRatings(restaurantID):
+#     url = "https://api.yelp.com/v3/businesses/"+restaurantID+"/reviews"
+#     headers = {'Authorization': 'Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx'} 
+#     r = requests.get(url, headers=headers)
+#     return r.text
 @app.route("/yelp/ratings/<restaurantID>")
 def yelpRatings(restaurantID):
-    url = "https://api.yelp.com/v3/businesses/"+restaurantID+"/reviews"
+    url = "https://api.yelp.com/v3/businesses/"+ restaurantID
     headers = {'Authorization': 'Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx'} 
     r = requests.get(url, headers=headers)
     return r.text
+
      
 @app.route("/eatstreet/search/<address>")
 def eatStreetFindRestaurant(address):
@@ -80,6 +87,17 @@ def eatStreetLogin(email, password):
     headers = {'X-Access-Token': 'b7bcd5837cd7dd95', "Content-Type": "application/json"} 
     r = requests.get(url, headers=headers)
     return r.text
+
+#needed ratings apparently
+#using the same shit as the yelp headers from above
+def yelpStars(location, restaurant):
+
+    url = "https://api.yelp.com/v3/businesses/" + {id} + "/reviews" 
+    headers = {'Authorization': 'Bearer ZBhBW-3hcpQxPNC0xiobU3wlTe1MtUk_Zo2EeBBV4vS0ZKu5aNVG0nYurjhrI1cOPd-jX2QUu4iMsg6Z6kN6Jc1a5Jrq78MxDg68Y_neaSg40HFS9kfvO7PJHVAdWHYx'} 
+    r = requests.get(url, headers=headers)
+    return r.text
+
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT',5000))

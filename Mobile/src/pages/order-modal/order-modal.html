@@ -26,14 +26,14 @@
 	<ion-item>
 
 		<ion-item>
-			<img [src]="imageSrc">
+			<img src="assets/eat-street-logo.jpg">
 		</ion-item>
-<ion-card>
-			<img [src]="foodImageSrc">
-</ion-card>
+		<ion-card>
+			<img [src]="post.image">
+		</ion-card>
 		<ion-row>
 			<ion-col>
-				<ion-icon name="cafe"></ion-icon> Resturant : Willy's <br>
+				<ion-icon name="cafe"></ion-icon> Resturant : {{post.restaurant}} <br>
 				<ion-icon name="cash"></ion-icon> Price: ${{totalPrice}} <br> Address: Atlanta, GA 30302
 			</ion-col>
 
@@ -52,24 +52,24 @@
 	</ion-item>
 
 
-<ion-card>
-	<ion-list can-swipe="listCanSwipe" type="list-inset">
-		<ion-list-header>
-  Menu
-</ion-list-header>
-		<ion-row>
-			<ion-col> Burgers </ion-col>
-			<ion-col> $5.75 </ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col> Hotdogs </ion-col>
-			<ion-col> $4.65 </ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col> Pie </ion-col>
-			<ion-col> $2.65 </ion-col>
-		</ion-row>
-	</ion-list>
+	<ion-card>
+		<ion-list can-swipe="listCanSwipe" type="list-inset">
+			<ion-list-header>
+				Menu
+			</ion-list-header>
+			<ion-row>
+				<ion-col> Burgers </ion-col>
+				<ion-col> $5.75 </ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col> Hotdogs </ion-col>
+				<ion-col> $4.65 </ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col> Pie </ion-col>
+				<ion-col> $2.65 </ion-col>
+			</ion-row>
+		</ion-list>
 	</ion-card>
 
 </ion-content>

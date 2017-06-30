@@ -7,8 +7,6 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
-import { ProfilePage } from '../pages/profile/profile';
 
 
 @Component({
@@ -33,13 +31,14 @@ export class MyApp {
     //this.rootPage = TabsPage;
 
     this.storage.get("apiKey").then((apiKey) => {
+        alert(apiKey);
       if (apiKey) {
         this.apiKey = apiKey;
         this.globals.apiKey = apiKey;
         this.rootPage = TabsPage;
       }
       else {
-        this.rootPage = HomePage;
+        this.rootPage = LoginPage;
       }
     });
 

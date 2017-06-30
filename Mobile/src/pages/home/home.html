@@ -7,8 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-card *ngFor="let post of posts">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>
 
+	<ion-card *ngFor="let post of posts">
 		<ion-item>
 			<ion-avatar item-left>
 				<img [src]="post.user.profileImg">
@@ -53,16 +60,4 @@
 
 
 	</ion-card>
-
-
-	<ion-list>
-    <div *ngFor="let folder of folders">
-      <ion-item *ngIf="folder['.tag'] == 'folder'" detail-push (click)="openFolder(folder.path_lower)">
-        {{folder.name}}
-      </ion-item>
-      <ion-item *ngIf="folder['.tag'] == 'file'">
-        {{folder.name}}
-      </ion-item>
-    </div>
-  </ion-list>
 </ion-content>

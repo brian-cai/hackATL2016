@@ -16,8 +16,16 @@ export class Image {
     console.log('Hello Image Provider');
   }
   share(post) {
-    let nativeUrl = this.globals.dbUrl + "newUser";
+    let nativeUrl = this.globals.dbUrl + "newPicture";
     return this.http.post(nativeUrl, post)
+      .map((results: Response) => {
+        console.log(results);
+        return results.json();
+      })
+  }
+  getShare() {
+    let nativeUrl = this.globals.dbUrl + "scrapePicture";
+    return this.http.get(nativeUrl)
       .map((results: Response) => {
         console.log(results);
         return results.json();

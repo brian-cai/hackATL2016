@@ -33,12 +33,8 @@ import { Yelp } from "../providers/yelp";
     ProfilePage,
     CommentsPage,
     LoginPage,
-<<<<<<< HEAD
-    OrderModalPage
-=======
     OrderModalPage,
     ModalPage
->>>>>>> aa2e7d603978e01885a024ed6daee35d9de145cb
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -54,12 +50,8 @@ import { Yelp } from "../providers/yelp";
     ProfilePage,
     CommentsPage,
     LoginPage,
-<<<<<<< HEAD
-    OrderModalPage
-=======
     OrderModalPage,
     ModalPage
->>>>>>> aa2e7d603978e01885a024ed6daee35d9de145cb
   ],
   providers: [Profile, Globals, User, Storage, Image, Yelp, Dropbox]
 })
